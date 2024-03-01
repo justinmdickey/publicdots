@@ -1,0 +1,7 @@
+{
+    "entryPoints": ["./notify-0.7.d.ts"],
+    "readme": "./README.md",
+    "name": "Notify-0.7",
+    "tsconfig": "./tsconfig.json"
+}
+

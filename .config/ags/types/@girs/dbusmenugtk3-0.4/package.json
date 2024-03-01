@@ -1,0 +1,65 @@
+{
+  "name": "@girs/dbusmenugtk3-0.4",
+  "version": "0.4.0-3.2.7",
+  "description": "GJS TypeScript type definitions for DbusmenuGtk3-0.4, generated from library version 0.4.0",
+  "type": "module",
+  "module": "dbusmenugtk3-0.4.js",
+  "main": "dbusmenugtk3-0.4.js",
+  "exports": {
+    "./ambient": "./dbusmenugtk3-0.4-ambient.d.ts",
+    "./import": "./dbusmenugtk3-0.4-import.d.ts",
+    ".": {
+      "import": {
+        "types": "./dbusmenugtk3-0.4.d.ts",
+        "default": "./dbusmenugtk3-0.4.js"
+      },
+      "require": {
+        "types": "./dbusmenugtk3-0.4.d.cts",
+        "default": "./dbusmenugtk3-0.4.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "yarn test:esm && yarn test:cjs",
+    "test:esm": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit dbusmenugtk3-0.4.d.ts",
+    "test:cjs": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit dbusmenugtk3-0.4.d.cts"
+  },
+  "dependencies": {
+    "@girs/atk-1.0": "^2.50.0-3.2.7",
+    "@girs/cairo-1.0": "^1.0.0-3.2.7",
+    "@girs/dbusmenu-0.4": "^0.4.0-3.2.7",
+    "@girs/freetype2-2.0": "^2.0.0-3.2.7",
+    "@girs/gdk-3.0": "^3.24.38-3.2.7",
+    "@girs/gdkpixbuf-2.0": "^2.0.0-3.2.7",
+    "@girs/gio-2.0": "^2.78.0-3.2.7",
+    "@girs/gjs": "^3.2.7",
+    "@girs/glib-2.0": "^2.78.0-3.2.7",
+    "@girs/gmodule-2.0": "^2.0.0-3.2.7",
+    "@girs/gobject-2.0": "^2.78.0-3.2.7",
+    "@girs/gtk-3.0": "^3.24.38-3.2.7",
+    "@girs/harfbuzz-0.0": "^8.2.1-3.2.7",
+    "@girs/pango-1.0": "^1.51.0-3.2.7",
+    "@girs/xlib-2.0": "^2.0.0-3.2.7"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "keywords": [
+    "Gir",
+    "TypeScript",
+    "types",
+    "GObject-Introspection",
+    "GJS",
+    "DbusmenuGtk3-0.4"
+  ],
+  "author": "ts-for-gir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjsify/types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjsify/ts-for-gir/issues"
+  },
+  "homepage": "https://github.com/gjsify/types/tree/main/dbusmenugtk3-0.4#readme"
+}

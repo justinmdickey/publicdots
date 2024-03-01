@@ -1,0 +1,53 @@
+{
+  "name": "@girs/dbusmenu-0.4",
+  "version": "0.4.0-3.2.7",
+  "description": "GJS TypeScript type definitions for Dbusmenu-0.4, generated from library version 0.4.0",
+  "type": "module",
+  "module": "dbusmenu-0.4.js",
+  "main": "dbusmenu-0.4.js",
+  "exports": {
+    "./ambient": "./dbusmenu-0.4-ambient.d.ts",
+    "./import": "./dbusmenu-0.4-import.d.ts",
+    ".": {
+      "import": {
+        "types": "./dbusmenu-0.4.d.ts",
+        "default": "./dbusmenu-0.4.js"
+      },
+      "require": {
+        "types": "./dbusmenu-0.4.d.cts",
+        "default": "./dbusmenu-0.4.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "yarn test:esm && yarn test:cjs",
+    "test:esm": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit dbusmenu-0.4.d.ts",
+    "test:cjs": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit dbusmenu-0.4.d.cts"
+  },
+  "dependencies": {
+    "@girs/gjs": "^3.2.7",
+    "@girs/glib-2.0": "^2.78.0-3.2.7",
+    "@girs/gobject-2.0": "^2.78.0-3.2.7"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "keywords": [
+    "Gir",
+    "TypeScript",
+    "types",
+    "GObject-Introspection",
+    "GJS",
+    "Dbusmenu-0.4"
+  ],
+  "author": "ts-for-gir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjsify/types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjsify/ts-for-gir/issues"
+  },
+  "homepage": "https://github.com/gjsify/types/tree/main/dbusmenu-0.4#readme"
+}

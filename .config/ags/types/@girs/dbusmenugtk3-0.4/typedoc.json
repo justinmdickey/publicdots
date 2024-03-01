@@ -1,0 +1,7 @@
+{
+    "entryPoints": ["./dbusmenugtk3-0.4.d.ts"],
+    "readme": "./README.md",
+    "name": "DbusmenuGtk3-0.4",
+    "tsconfig": "./tsconfig.json"
+}
+

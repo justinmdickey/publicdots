@@ -1,0 +1,55 @@
+{
+  "name": "@girs/gdkpixbuf-2.0",
+  "version": "2.0.0-3.2.7",
+  "description": "GJS TypeScript type definitions for GdkPixbuf-2.0, generated from library version 2.0.0",
+  "type": "module",
+  "module": "gdkpixbuf-2.0.js",
+  "main": "gdkpixbuf-2.0.js",
+  "exports": {
+    "./ambient": "./gdkpixbuf-2.0-ambient.d.ts",
+    "./import": "./gdkpixbuf-2.0-import.d.ts",
+    ".": {
+      "import": {
+        "types": "./gdkpixbuf-2.0.d.ts",
+        "default": "./gdkpixbuf-2.0.js"
+      },
+      "require": {
+        "types": "./gdkpixbuf-2.0.d.cts",
+        "default": "./gdkpixbuf-2.0.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "yarn test:esm && yarn test:cjs",
+    "test:esm": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit gdkpixbuf-2.0.d.ts",
+    "test:cjs": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit gdkpixbuf-2.0.d.cts"
+  },
+  "dependencies": {
+    "@girs/gio-2.0": "^2.78.0-3.2.7",
+    "@girs/gjs": "^3.2.7",
+    "@girs/glib-2.0": "^2.78.0-3.2.7",
+    "@girs/gmodule-2.0": "^2.0.0-3.2.7",
+    "@girs/gobject-2.0": "^2.78.0-3.2.7"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "keywords": [
+    "Gir",
+    "TypeScript",
+    "types",
+    "GObject-Introspection",
+    "GJS",
+    "GdkPixbuf-2.0"
+  ],
+  "author": "ts-for-gir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjsify/types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjsify/ts-for-gir/issues"
+  },
+  "homepage": "https://github.com/gjsify/types/tree/main/gdkpixbuf-2.0#readme"
+}

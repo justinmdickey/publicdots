@@ -1,0 +1,82 @@
+{
+  "name": "@girs/gjs",
+  "version": "3.2.7",
+  "description": "GJS TypeScript type definitions for Gjs",
+  "type": "module",
+  "module": "gjs.js",
+  "main": "gjs.js",
+  "exports": {
+    "./ambient": "./ambient.d.ts",
+    "./gettext": {
+      "import": {
+        "types": "./gettext.d.ts",
+        "default": "./gettext.js"
+      },
+      "require": {
+        "types": "./gettext.d.cts",
+        "default": "./gettext.cjs"
+      }
+    },
+    "./system": {
+      "import": {
+        "types": "./system.d.ts",
+        "default": "./system.js"
+      },
+      "require": {
+        "types": "./system.d.cts",
+        "default": "./system.cjs"
+      }
+    },
+    "./cairo": {
+      "import": {
+        "types": "./cairo.d.ts",
+        "default": "./cairo.js"
+      },
+      "require": {
+        "types": "./cairo.d.cts",
+        "default": "./cairo.cjs"
+      }
+    },
+    "./dom": "./dom.d.ts",
+    ".": {
+      "import": {
+        "types": "./gjs.d.ts",
+        "default": "./gjs.js"
+      },
+      "require": {
+        "types": "./gjs.d.cts",
+        "default": "./gjs.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "yarn test:esm && yarn test:cjs",
+    "test:esm": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit gjs.d.ts",
+    "test:cjs": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit gjs.d.cts"
+  },
+  "dependencies": {
+    "@girs/glib-2.0": "^2.78.0-3.2.7",
+    "@girs/gobject-2.0": "^2.78.0-3.2.7"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "keywords": [
+    "Gir",
+    "TypeScript",
+    "types",
+    "GObject-Introspection",
+    "GJS",
+    "Gjs"
+  ],
+  "author": "ts-for-gir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjsify/types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjsify/ts-for-gir/issues"
+  },
+  "homepage": "https://github.com/gjsify/types/tree/main/gjs#readme"
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // General settings for code interpretation
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "types": [],
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noEmitOnError": false,
+    "baseUrl": "./",
+    "rootDir": ".",
+    // General settings for code generation
+    "removeComments": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "newLine": "LF"
+  },
+  "include": ["./gobject-2.0.d.ts"]
+}
+
+

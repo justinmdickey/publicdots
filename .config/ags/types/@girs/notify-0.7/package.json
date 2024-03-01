@@ -1,0 +1,56 @@
+{
+  "name": "@girs/notify-0.7",
+  "version": "0.8.3-3.2.7",
+  "description": "GJS TypeScript type definitions for Notify-0.7, generated from library version 0.8.3",
+  "type": "module",
+  "module": "notify-0.7.js",
+  "main": "notify-0.7.js",
+  "exports": {
+    "./ambient": "./notify-0.7-ambient.d.ts",
+    "./import": "./notify-0.7-import.d.ts",
+    ".": {
+      "import": {
+        "types": "./notify-0.7.d.ts",
+        "default": "./notify-0.7.js"
+      },
+      "require": {
+        "types": "./notify-0.7.d.cts",
+        "default": "./notify-0.7.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "test": "yarn test:esm && yarn test:cjs",
+    "test:esm": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit notify-0.7.d.ts",
+    "test:cjs": "NODE_OPTIONS=--max_old_space_size=9216 tsc --noEmit notify-0.7.d.cts"
+  },
+  "dependencies": {
+    "@girs/gdkpixbuf-2.0": "^2.0.0-3.2.7",
+    "@girs/gio-2.0": "^2.78.0-3.2.7",
+    "@girs/gjs": "^3.2.7",
+    "@girs/glib-2.0": "^2.78.0-3.2.7",
+    "@girs/gmodule-2.0": "^2.0.0-3.2.7",
+    "@girs/gobject-2.0": "^2.78.0-3.2.7"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "keywords": [
+    "Gir",
+    "TypeScript",
+    "types",
+    "GObject-Introspection",
+    "GJS",
+    "Notify-0.7"
+  ],
+  "author": "ts-for-gir",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjsify/types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gjsify/ts-for-gir/issues"
+  },
+  "homepage": "https://github.com/gjsify/types/tree/main/notify-0.7#readme"
+}

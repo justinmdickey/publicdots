@@ -1,0 +1,7 @@
+{
+    "entryPoints": ["./freetype2-2.0.d.ts"],
+    "readme": "./README.md",
+    "name": "freetype2-2.0",
+    "tsconfig": "./tsconfig.json"
+}
+
