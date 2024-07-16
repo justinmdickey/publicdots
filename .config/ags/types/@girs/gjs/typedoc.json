@@ -1,7 +1,0 @@
-{
-    "entryPoints": ["./gjs.d.ts"],
-    "readme": "./README.md",
-    "name": "Gjs",
-    "tsconfig": "./tsconfig.json"
-}
-

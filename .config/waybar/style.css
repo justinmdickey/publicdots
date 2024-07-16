@@ -1,0 +1,152 @@
+@import url("/home/justin/.cache/wal/colors-waybar.css");
+
+* {
+  border: none;
+  font-family: 'Jetbrains Mono', 'Font Awesome 6 Brands', 'Font Awesome 6 Free Solid';
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#waybar {
+  background-color: @background;
+  color: @background;
+  font-weight: 800;
+}
+
+.module {
+  padding: 4px;
+  margin: 3px;
+  color: @color15;
+}
+
+.module:hover {
+}
+
+label.module {
+  border-radius: 10px;
+  margin: 3px;
+  padding: 2px 4px;
+  min-width: 30px;
+}
+
+#window {
+  background-color: @color3;
+  color: @background;
+  padding: 4px;
+  margin: 3px;
+  border-radius: 10px;
+  font-size: 14px;
+  min-width: 40px;
+}
+
+window#waybar.empty #window {
+}
+
+#temperature {
+}
+
+#temperature.critical {
+}
+
+#custom-gputemp {
+}
+
+#custom-gputemp.critical {
+}
+
+#image {
+  margin: 3px;
+  border-radius: 10px;
+}
+
+#network {
+  background-color: @color1;
+  color: @background;
+}
+
+#custom-mullvad {
+  background-color: @color4;
+  color: @background;
+}
+
+#pulseaudio {
+  background-color: @color5;
+  color: @background;
+}
+
+#clock {
+  background-color: @color2;
+  color: @background;
+  margin-right: 15px;
+}
+
+#custom-notification {
+  background-color: @color3;
+  color: @background;
+}
+
+#tray {
+  padding: 4px 10px;
+  margin: 3px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+#battery {
+  background-color: @color6;
+  color: @background;
+}
+
+#battery#bat1 {
+  background-color: @color6;
+  color: @background;
+}
+
+#battery.charging {
+}
+
+#battery#bat1.charging {
+}
+
+#battery.critical {
+}
+
+#battery#bat1.critical {
+}
+
+#battery.warning {
+}
+
+#battery#bat1.warning {
+}
+
+#custom-hostname {
+  background-color: @color1;
+  color: @background;
+}
+
+#custom-spotify {
+  background-color: @color2;
+  color: @background;
+}
+
+#workspaces {
+  background-color: @color2;
+  color: @background;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 4px;
+}
+
+#workspaces button {
+  color: @background;
+}
+
+#workspaces button.active {
+  background-color: @background;
+  color: @foreground;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+}

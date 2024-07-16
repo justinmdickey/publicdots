@@ -1,0 +1,170 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 40,
+    "spacing": 6,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/spotify", "custom/hostname"],
+    "modules-right": ["tray", "pulseaudio", "custom/power", "battery", "battery#bat1", "custom/mullvad", "network", "custom/notification", "clock"],
+
+    "hyprland/window": {
+        "max-length": 45,
+        "separate-outputs": true,
+    },
+
+    "hyprland/workspaces": {
+        "active-only": false,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "{icon}",
+        "icon-size": 20,
+        "format-icons": {
+		        "1": "",
+		        "2": "",
+		        "3": "",
+		        "4": "",
+		        "5": "",
+            "default": ""
+	      },
+        "persistent-workspaces": {
+            "*": 5,
+        },
+    },
+
+    "custom/spacer": {
+        "format": " "
+    },
+
+    "custom/hostname": {
+        "exec": "/home/justin/Documents/Scripts/whoami.sh",
+        "format": "{}",
+        "on-click": "hyprctl dispatch exec [float] 'kitty'"
+    },
+
+    "temperature": {
+    "interval": 10,
+    // "thermal-zone": 4,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
+    },
+
+    "temperature#temp2": {
+    "interval": 10,
+    // "thermal-zone": 4,
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C",
+    "on-click": "hyprctl dispatch exec [float] 'kitty -e nvidia-smi'"
+    },
+
+    "custom/notification": {
+        "format": "{icon}",
+        "format-icons": {
+          "notification": "<span foreground='red'><sup></sup></span>",
+          "none": "",
+          "dnd-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-none": "",
+          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "inhibited-none": "",
+          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "", 
+        "max-length": 50,
+        "on-click": "hyprctl dispatch exec [float] 'kitty -e nmtui'",
+    },
+
+    "custom/mullvad": {
+        "exec": "/home/justin/Documents/Scripts/mullvad-status.sh",
+        "format": "{}",
+        "on-click": "/home/justin/Documents/Scripts/mullvad-toggle.sh"
+   },
+
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 /home/justin/.config/waybar/modules/mediaplayer.py --player spotify",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "spacing": 0,
+        "margin": 0,
+        "max-length": 45
+    },
+
+    "image": {
+         "exec":"~/Documents/Scripts/album_art.sh",
+         "size": 40,
+         "interval": 5
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+
+    "clock": {
+        "interval": 1,
+        "timezone": "America/Indianapolis",
+        "format": "{:%a %b %d %I:%M%p}",
+        "on-click": "hyprctl dispatch exec [float] 'gnome-calendar'",
+        "tooltip": true,
+        "tooltip-format": "{:%a %b %d %I:%M%p}"
+    },
+
+    "pulseaudio": {
+        "format": " {icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "0% {icon} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+
+    "battery#bat1": {
+        "bat": "BAT1",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+}

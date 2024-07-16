@@ -1,7 +1,0 @@
-{
-    "entryPoints": ["./gio-2.0.d.ts"],
-    "readme": "./README.md",
-    "name": "Gio-2.0",
-    "tsconfig": "./tsconfig.json"
-}
-
