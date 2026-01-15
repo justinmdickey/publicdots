@@ -1,0 +1,9 @@
+# Stow ignore file - exclude repo files that shouldn't be symlinked to ~
+README.md
+LICENSE
+\.git
+\.gitignore
+scripts
+images
+sync-from-private.sh
+\.stow-local-ignore

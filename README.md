@@ -42,13 +42,30 @@ This repository contains my Wayland/Hyprland desktop configuration including:
 
 ## Installation
 
-### Quick Install
+### Using GNU Stow (Recommended)
 
 ```bash
 # Clone the repository
 git clone https://github.com/justinmdickey/publicdots.git ~/publicdots
 
-# Option 1: Symlink configs (recommended for easy updates)
+# Use stow to symlink configs to ~/.config/
+cd ~/publicdots
+stow --adopt .
+```
+
+The `--adopt` flag will:
+- Create symlinks from `~/.config/*` pointing to `~/publicdots/.config/*`
+- If you have existing configs, they'll be moved into the repo (adopted)
+
+A `.stow-local-ignore` file excludes non-config files (scripts/, README.md, etc.) from being stowed.
+
+### Manual Install
+
+```bash
+# Clone the repository
+git clone https://github.com/justinmdickey/publicdots.git ~/publicdots
+
+# Option 1: Symlink configs
 ln -sf ~/publicdots/.config/hypr ~/.config/hypr
 ln -sf ~/publicdots/.config/waybar ~/.config/waybar
 # ... repeat for other configs you want
@@ -59,29 +76,14 @@ cp -r ~/publicdots/.config/waybar ~/.config/
 # ... repeat for other configs
 ```
 
-### Scripts Installation
+### Scripts
 
-The configurations expect scripts to be in `~/publicdots/scripts/`. You have several options:
+The configurations reference scripts at `~/publicdots/scripts/`. Since the repo should be cloned to `~/publicdots`, scripts will work automatically.
 
-**Option A: Use as-is (recommended)**
+If you clone to a different location, update the script paths:
 ```bash
-# Configs already point to ~/publicdots/scripts/
-# Just make sure the repo is cloned to ~/publicdots
-```
-
-**Option B: Symlink to different location**
-```bash
-# If you prefer scripts in ~/.local/bin/
-ln -sf ~/publicdots/scripts ~/.local/bin/dotscripts
-# Then update paths in configs manually
-```
-
-**Option C: Copy scripts**
-```bash
-# Copy to your preferred script location
-cp ~/publicdots/scripts/* ~/Documents/Scripts/
-# Then update paths in configs using find/replace:
-# ~/publicdots/scripts/ -> ~/Documents/Scripts/
+cd ~/your-location/.config
+find . -type f -exec sed -i 's|~/publicdots/scripts/|~/your-location/scripts/|g' {} \;
 ```
 
 ### Dependencies
@@ -136,7 +138,7 @@ wal -i /path/to/wallpaper.jpg
 
 ```
 publicdots/
-├── .config/           # Application configurations
+├── .config/              # Application configurations (stowed to ~/.config/)
 │   ├── ghostty/
 │   ├── hypr/
 │   ├── nvim/
@@ -145,10 +147,11 @@ publicdots/
 │   ├── tmux/
 │   ├── wal/
 │   └── waybar/
-├── scripts/           # Utility scripts
-├── images/            # Screenshots and assets
-├── .gitignore         # Security safeguards
-└── README.md          # This file
+├── scripts/              # Utility scripts (not stowed, referenced directly)
+├── images/               # Screenshots and assets
+├── .gitignore            # Security safeguards
+├── .stow-local-ignore    # Excludes non-config files from stow
+└── README.md             # This file
 ```
 
 ## Key Bindings
