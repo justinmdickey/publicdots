@@ -1,0 +1,12 @@
+theme = /home/justin/.cache/wal/colors-ghostty
+font-family = "Maple Mono NF"
+font-size = 14
+background-opacity = 1
+window-padding-x = 12
+window-padding-y = 12
+focus-follows-mouse = true
+gtk-titlebar = true
+gtk-adwaita = true
+macos-titlebar-style = tabs
+macos-window-shadow = false
+confirm-close-surface = false

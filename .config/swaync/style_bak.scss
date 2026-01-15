@@ -1,0 +1,350 @@
+@import '/home/justin/.cache/wal/colors.scss';
+* {
+  /* font-family: "Maple Mono NF"; */
+  font-family: "Adwaita Sans";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+progressbar progress,
+.progressbar progress {
+  background-color: $color4;
+}
+
+.control-center {
+  background: $background;
+  padding: 20px;
+  border: 2px solid rgba(210,210,230,0.2);
+  border-radius: 32px;
+  margin: 24px;
+}
+
+.control-center-list {
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+.notification-row {
+  outline: none;
+  margin: 0px;
+  padding: 0;
+}
+
+.notification {
+  background: $color0;
+  padding: 6px;
+  margin: 0px;
+  /* border: 1px solid $color12; */
+}
+
+.notification-body-image {
+  border-radius: 3px;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px solid $color2;
+  margin: 0;
+}
+
+.notification-default-action {
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.close-button {
+  background: $color1;
+  color: $background;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: $color1;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-action {
+  border: 2px solid $color2;
+  border-top: none;
+  border-radius: 5px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  /* color: $color2; */
+  background-color: transparent;
+}
+
+.inline-reply {
+  margin-top: 8px;
+}
+
+.inline-reply-entry {
+  background: $background;
+  color: $foreground;
+  caret-color: $foreground;
+  border: 1px solid $color1;
+  border-radius: 5px;
+}
+
+.inline-reply-button {
+  margin-left: 4px;
+  background: $background;
+  border: 1px solid $color3;
+  border-radius: 5px;
+  color: $foreground;
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: $color7;
+  border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+  background: $color2;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.body-image {
+  margin-top: 6px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.summary {
+  font-size: 20px;
+  padding-left: 15px;
+  font-weight: 900;
+  background: transparent;
+  color: $foreground;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 18px;
+  font-weight: 700;
+  background: transparent;
+  color: $foreground;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 18px;
+  padding-left: 15px;
+  font-weight: 600;
+  padding-top: 5px;
+  background: transparent;
+  color: $foreground;
+  text-shadow: none;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background:transparent;
+}
+
+.widget-title {
+  color: $foreground;
+  background: transparent;
+  padding: 5px 10px;
+  margin: 10px 10px 5px 10px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.widget-title > button {
+  font-size: 20px;
+  color: $foreground;
+  text-shadow: none;
+  background: $background;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.widget-title > button:hover {
+  background: $color1;
+  color: $background;
+}
+
+.widget-dnd {
+  background: transparent;
+  padding: 5px 10px;
+  margin: 5px 10px 10px 10px;
+  border-radius: 15px;
+  font-size: 24px;
+  color: $foreground;
+}
+
+.widget-dnd > switch {
+  border-radius: 16px;
+  /* border: 1px solid $color2; */
+  background: $color4;
+}
+
+.widget-dnd > switch:checked {
+  background: $color1;
+  border: 1px solid $color1;
+}
+
+.widget-dnd > switch slider {
+  background: $background;
+  border-radius: 15px;
+}
+
+.widget-dnd > switch:checked slider {
+  background: $background;
+  border-radius: 15px;
+}
+
+.widget-label {
+  margin: 10px 10px 5px 10px;
+}
+
+.widget-label > label {
+  font-size: 20px;
+  color: $foreground;
+}
+
+.widget-mpris {
+  color: $foreground;
+  background: transparent;
+  padding: 15px 15px;
+  margin: 5px 10px 5px 10px;
+  border-radius: 20px;
+}
+
+.widget-mpris > box > button {
+  border-radius: 20px;
+}
+
+.widget-mpris-player {
+  padding: 15px 15px;
+  margin: 10px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.widget-mpris-subtitle {
+  font-size: 22px;
+}
+
+.widget-buttons-grid {
+  font-size: 32px;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 5px;
+  background: $background;
+}
+
+.control-center box.widget-buttons-grid flowbox flowboxchild button {
+  border-radius: 25px;
+  background: $color0;
+}
+
+.control-center box.widget-buttons-grid flowbox flowboxchild button label {
+  font-size: 32px;
+  padding: 16px 64px;
+}
+
+.widget-buttons-grid flowbox flowboxchild button:hover {
+  background: $color4;
+  color: $color4;
+}
+
+.widget-menubar > box > .menu-button-bar > button {
+  border: none;
+  background: transparent;
+}
+
+.topbar-buttons > button {
+  border: none;
+  background: transparent;
+}
+
+.widget-volume {
+  background: transparent;
+  padding: 5px;
+  margin: 10px 10px 5px 10px;
+  border-radius: 5px;
+  font-size: 32px;
+  color: $foreground;
+}
+
+.widget-volume trough {
+  background: $color8;
+  border-radius: 5px;
+  min-height: 10px;
+}
+
+.widget-volume highlight {
+  background: $color4;
+  border-radius: 5px;
+  min-height: 10px;
+}
+
+.widget-volume slider {
+  background: $foreground;
+}
+
+.widget-volume > box > button {
+  background: $color2;
+  border: none;
+}
+
+.per-app-volume {
+  background-color: $background;
+  padding: 4px 8px 8px;
+  margin: 0 8px 8px;
+  border-radius: 5px;
+}
+
+.widget-backlight {
+  background: $background;
+  padding: 5px;
+  margin: 10px 10px 5px 10px;
+  border-radius: 5px;
+  font-size: 32px;
+  color: $foreground;
+}
+
+/* .widget-inhibitors {
+    margin: 8px;
+    font-size: 1.5rem
+}
+
+.widget-inhibitors>button {
+    font-size: initial;
+    color: $foreground;
+    text-shadow: none;
+    background: $background;
+    border: 1px solid red;
+    box-shadow: none;
+    border-radius: 7px
+}
+
+.widget-inhibitors>button:hover {
+    background: $background-hover
+} */
+

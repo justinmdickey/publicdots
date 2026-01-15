@@ -1,0 +1,12 @@
+theme = colors-ghostty
+font-family = "JetBrainsMono NF"
+font-size = 16
+background-opacity = 1
+window-padding-x = 12
+window-padding-y = 12
+focus-follows-mouse = true
+gtk-titlebar = true
+macos-titlebar-style = tabs
+macos-window-shadow = false
+confirm-close-surface = false
+keybind = shift+enter=text:\n

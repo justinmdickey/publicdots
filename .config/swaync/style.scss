@@ -1,0 +1,390 @@
+@import '/home/justin/.cache/wal/colors.scss';
+
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
+
+$white: #eaeaec;
+$background_alt: rgba( $background, 1);
+
+:root {
+  --notification-icon-size: 96px;
+  --notification-app-icon-size: calc(var(--notification-icon-size) / 4);
+  /* --notification-app-icon-size: 64px; */
+}
+
+* {
+  font-family: "Adwaita Sans";
+  /* font-family: "Maple Mono NF"; */
+  color: $foreground;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+progressbar progress,
+.progressbar progress {
+  background-color: $color4;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.floating-notifications,
+.blank-window {
+  background: transparent;
+}
+
+/* ==========================================================================
+   CONTROL CENTER
+   ========================================================================== */
+
+.control-center {
+  /* background: rgba( $background, 0.8 ); */
+  background: $background;
+  padding: 20px;
+  border: 2px solid $color7;
+  border-radius: 24px;
+  margin: 20px;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.2;
+}
+
+/* ==========================================================================
+   NOTIFICATIONS
+   ========================================================================== */
+
+.notification-row {
+  outline: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.notification {
+  background: $background;
+  padding: 8px;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 5px 0px 0px 0px;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0px;
+}
+
+.notification-default-action {
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.notification-body-image,
+.body-image {
+  /* width: 128px; */
+  border-radius: 3px;
+  margin-top: 6px;
+}
+
+.body-image {
+  background-color: #fff;
+}
+
+/* Close Button */
+.close-button {
+  background: $color1;
+  color: $color0;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 25px;
+  margin: 15px 12px 0 0;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: $color1;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+/* Notification Actions */
+.notification-action {
+  border: 2px solid $color2;
+  border-top: none;
+  border-radius: 5px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background-color: transparent;
+}
+
+/* Notification Text */
+.summary {
+  font-size: 18px;
+  padding-left: 12px;
+  font-weight: 900;
+  background: transparent;
+  color: $foreground;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 18px;
+  font-weight: 700;
+  background: transparent;
+  color: $foreground;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 16px;
+  padding-left: 12px;
+  font-weight: 600;
+  padding-top: 5px;
+  background: transparent;
+  color: $foreground;
+  text-shadow: none;
+}
+
+/* Inline Reply */
+.inline-reply {
+  margin-top: 8px;
+}
+
+.inline-reply-entry {
+  background: $color0;
+  color: $foreground;
+  caret-color: $foreground;
+  border: 1px solid $color1;
+  border-radius: 5px;
+}
+
+.inline-reply-button {
+  margin-left: 4px;
+  background: $color0;
+  border: 1px solid $color3;
+  border-radius: 5px;
+  color: $foreground;
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: $color7;
+  border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+  background: $color2;
+}
+
+/* ==========================================================================
+   WIDGETS
+   ========================================================================== */
+
+/* Widget Title */
+.widget-title {
+  color: $foreground;
+  background: transparent;
+  padding: 5px 10px;
+  margin: 10px 10px 5px 10px;
+  font-size: 32px;
+  border-radius: 5px;
+}
+
+.widget-title > button {
+  font-size: 32px;
+  color: $foreground;
+  text-shadow: none;
+  background: $color0;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.widget-title > button:hover {
+  background: $color1;
+  color: $color0;
+}
+
+/* Widget Label */
+.widget-label {
+  margin: 10px 10px 5px 10px;
+}
+
+.widget-label > label {
+  font-size: 32px;
+  color: $foreground;
+}
+
+/* Do Not Disturb */
+.widget-dnd {
+  background: transparent;
+  padding: 5px 10px;
+  margin: 5px 10px 10px 10px;
+  border-radius: 15px;
+  font-size: 32px;
+  color: $foreground;
+}
+
+.widget-dnd > switch {
+  border-radius: 16px;
+  background: $color4;
+}
+
+.widget-dnd > switch:checked {
+  background: $color1;
+  border: 1px solid $color1;
+}
+
+.widget-dnd > switch slider {
+  background: $color0;
+  border-radius: 15px;
+}
+
+.widget-dnd > switch:checked slider {
+  background: $color0;
+  border-radius: 15px;
+}
+
+/* MPRIS Media Player */
+.widget-mpris {
+  color: $background;
+  background: transparent;
+  /* padding: 15px; */
+  /* margin: 5px 10px; */
+  border-radius: 15px;
+}
+
+/* .widget-mpris > box > button { */
+/*   border-radius: 20px; */
+/*   color: $color1; */
+/* } */
+
+.widget-mpris-player {
+  padding: 0px;
+  color: $background;
+  margin: 0px;
+  background: transparent;
+  border-radius: 15px;
+  border: 2px solid $background;
+}
+
+.widget-mpris-player button {
+  color: $color1;
+  margin-top: 20px;
+}
+
+.widget-mpris-title {
+  color: $white;
+  padding: 0px 20px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.widget-mpris-subtitle {
+  color: $white;
+  padding: 0px 20px;
+  font-size: 16px;
+}
+
+.widget-mpris .widget-mpris-player button {
+  background: $color2;
+  color: $color0;
+  padding: 5px;
+}
+
+.widget-mpris .widget-mpris-player button:hover {
+  background: $color0;
+  color: $color0;
+}
+
+/* Button Grid */
+.widget-buttons-grid {
+  font-size: 24px;
+  color: $foreground;
+  padding: 6px;
+  margin: 0;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.control-center box.widget-buttons-grid flowbox flowboxchild button {
+  border-radius: 25px;
+  background: $color0;
+}
+
+.control-center box.widget-buttons-grid flowbox flowboxchild button label {
+  font-size: 32px;
+  padding: 4px 24px;
+}
+
+.control-center box.widget-buttons-grid flowbox flowboxchild button:hover {
+  background: $color4;
+  color: $background;
+}
+
+/* .widget-buttons-grid flowbox flowboxchild button:hover { */
+/*   background: $color4; */
+/*   color: $color4; */
+/* } */
+
+/* Menu Bar */
+.widget-menubar > box > .menu-button-bar > button,
+.topbar-buttons > button {
+  border: none;
+  background: transparent;
+}
+
+/* Volume Controls */
+.widget-volume {
+  background: transparent;
+  padding: 5px;
+  margin: 10px 10px 5px 10px;
+  border-radius: 5px;
+  font-size: 32px;
+  color: $foreground;
+}
+
+.widget-volume trough {
+  background: $color8;
+  border-radius: 5px;
+  min-height: 10px;
+}
+
+.widget-volume highlight {
+  background: $color2;
+  border-radius: 5px;
+  min-height: 10px;
+}
+
+.widget-volume slider {
+  background: $foreground;
+}
+
+.widget-volume > box > button {
+  background: $color2;
+  border: none;
+}
+
+.per-app-volume {
+  background-color: $color0;
+  padding: 4px 8px 8px;
+  margin: 0 8px 8px;
+  border-radius: 5px;
+}
+
+/* Backlight */
+.widget-backlight {
+  background: $color0;
+  padding: 5px;
+  margin: 10px 10px 5px 10px;
+  border-radius: 5px;
+  font-size: 32px;
+  color: $foreground;
+}

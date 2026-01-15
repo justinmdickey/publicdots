@@ -1,0 +1,28 @@
+return {
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		lazy = false,
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+		config = function()
+			require("neo-tree").setup({
+				window = {
+					width = 30,
+				},
+				filesystem = {
+					filtered_items = {
+						hide_hidden = false,
+					},
+				},
+			})
+
+			-- Add keybind for <leader>e to toggle Neo-tree
+			vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
+		end,
+	},
+}

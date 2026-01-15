@@ -1,0 +1,31 @@
+# Sensitive files
+.env
+.env.*
+**/secrets.*
+**/credentials.*
+**/*_secret*
+**/*_private*
+*.pem
+*.key
+*.crt
+id_rsa*
+id_ed25519*
+
+# Personal cache/data
+*.log
+*.cache
+.DS_Store
+.vscode/
+.idea/
+
+# Neovim plugin directories (keep config, not installed plugins)
+.config/nvim/plugin/
+.config/nvim/lazy-lock.json
+
+# Tmux plugins (keep config, not installed plugins)
+.config/tmux/plugins/*/
+
+# Temporary files
+*~
+*.swp
+*.swo

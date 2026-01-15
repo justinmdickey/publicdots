@@ -1,0 +1,107 @@
+// # z0mbi3 -  https://github.com/gh0stzk/dotfiles
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "Maple Mono 14";
+    
+    //hover-select:				 true;
+	//me-select-entry:			 "";
+	//me-accept-entry:			 "MousePrimary";
+}
+
+//----- Global Properties -----//
+
+
+@import                          "~/.cache/wal/rofi-dark.rasi"
+
+* {
+  padding:                     0px;
+  margin:                      0px;
+}
+
+
+//----- Main Window -----//
+
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       80%;
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               0px;
+    background-color:            transparent;
+    anchor:                      center;
+    location:                    center;
+}
+
+//----- Main Box -----//
+
+mainbox {
+    enabled:                     true;
+    children:                    [ "listview" ];
+    padding:                     3%;
+    background-color:            transparent;
+    // width:                       1400px;
+}
+
+//----- Listview -----//
+
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    spacing:                     20px;
+    padding:                     0px;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                false;
+    fixed-columns:               false;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @normal-foreground;
+}
+
+//----- Elements -----//
+
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    spacing:                     0px;
+    padding:                     10px;
+    border:                      3px;
+    border-radius:               16px;
+    border-color:                rgba(0, 0, 0, 0.3);
+    cursor:                      pointer;
+    background-color:            rgba(0, 0, 0, 0.3);
+    text-color:                  @normal-foreground;
+}
+
+element selected.normal {
+    border-color:                @color4;
+    background-color:            rgba(0, 0, 0, 0.8);
+    text-color:                  @color4;
+}
+
+element-icon {
+    size:                        600px;
+    cursor:                      inherit;
+    border-radius:               12px;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element-text {
+    enabled:                     false;
+    cursor:                      inherit;
+    padding:                     0px;
+    background-color:            transparent;
+    text-color:                  inherit;
+}

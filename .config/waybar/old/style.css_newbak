@@ -1,0 +1,392 @@
+@import url("/home/justin/.cache/wal/colors-waybar.css");
+
+* {
+  font-weight: 600;
+}
+
+window#waybar {
+  /* background-color: rgba(224,230,237,0.6); */
+  /* background: @background; */
+  background: transparent;
+  font-weight: 600;
+  margin: 15px;
+}
+
+.module {
+  /* background-color: @background; */
+  /* background-color: @background; */
+  background-color: rgba(4, 4, 10, 0.8);
+  color: @foreground;
+  font-family: "Maple Mono", "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  min-width: 42px;
+  font-size: 18px;
+  border-radius: 50px;
+  margin: 10px 2px 2px 2px;
+  padding: 3px;
+}
+
+.module:hover {
+  background-color: @background;
+  color: @background;
+}
+
+label.module {
+  padding: 0px 12px;
+  /* min-width: 30px; */
+}
+
+#group-utils {
+  border-radius: 50px;
+}
+
+#custom-utils {
+}
+
+#window {
+  min-width: 40px;
+}
+#power-profiles-daemon {
+  color: @foreground;
+}
+#power-profiles-daemon:hover {
+  background-color: @color8;
+  color: @background;
+}
+
+#power-profiles-daemon.performance {
+  color: @foreground;
+}
+#power-profiles-daemon.performance:hover {
+  background-color: @color4;
+  color: @background;
+}
+
+#power-profiles-daemon.balanced {
+  color: @foreground;
+}
+#power-profiles-daemon.balanced:hover {
+  background-color: @color5;
+  color: @background;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @foreground;
+}
+#power-profiles-daemon.power-saver:hover {
+  background-color: @color2;
+  color: @background;
+}
+
+.sub-power {
+  border-radius: 50px;
+}
+
+.sub-power:hover {
+  background-color: @color8;
+  color: @background;
+}
+
+#custom-lock:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+#custom-reboot:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+#custom-shutdown:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+#custom-exit:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+.sub-music {
+}
+
+#pulseaudio-slider {
+  background-color: transparent;
+  padding: 0px 10px;
+}
+
+#pulseaudio-slider slider {
+  background-color: @foreground;
+}
+
+#pulseaudio-slider trough {
+  min-height: 6px;
+  min-width: 150px;
+  background-color: @color8;
+}
+
+#pulseaudio-slider trough:hover {
+  background-color: @color8;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: @color2;
+}
+
+#custom-song_progress {
+  font-family: "JetBrains Mono";
+}
+
+#custom-spotify {
+}
+
+#custom-spotify:hover {
+  background-color: @color4;
+}
+
+#custom-spotify-icon {
+  color: @color2;
+}
+
+#custom-nowplaying {
+}
+
+#custom-nowplaying:hover {
+  color: @background;
+  background-color: @color2;
+}
+
+#pulseaudio {
+  color: @foreground;
+}
+
+#pulseaudio:hover {
+  color: @background;
+  background-color: @color2;
+}
+
+#backlight-slider {
+  min-width: 150px;
+}
+
+#backlight-slider slider {
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+#backlight-slider trough {
+  border-radius: 5px;
+}
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+}
+
+#cpu {
+}
+
+#cpu:hover {
+  color: @background;
+}
+
+#custom-fzf {
+  color: @color4;
+}
+
+#custom-fzf:hover {
+  color: @background;
+  background-color: @color4;
+}
+
+#custom-launcher {
+  color: @foreground;
+}
+
+#custom-launcher:hover {
+  color: @background;
+  background-color: @color4;
+}
+
+#custom-powermenu {
+  border-bottom: 2px solid transparent;
+  color: @foreground;
+}
+
+#custom-powermenu:hover {
+  background-color: @color1;
+  color: @background;
+}
+
+window#waybar.empty #window {
+}
+
+#temperature {
+}
+
+#temperature.critical {
+}
+
+#custom-gputemp {
+}
+
+#custom-gputemp.critical {
+}
+
+#custom-updates {
+  color: @foreground;
+}
+
+#custom-updates:hover {
+  color: @background;
+  background-color: @color3;
+}
+
+#custom-hyprsunset {
+  color: @foreground;
+}
+
+#custom-hyprsunset:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+#custom-tailscale {
+}
+
+#network {
+  color: @foreground;
+}
+
+#network:hover {
+  color: @background;
+  background-color: @color5;
+}
+
+#bluetooth.connected {
+  color: @foreground;
+}
+
+#bluetooth:hover {
+  color: @background;
+  background-color: @color4;
+}
+
+#clock {
+  color: @foreground;
+}
+
+#clock:hover {
+  color: @background;
+  background-color: @color2;
+}
+
+#custom-clock-icon {
+  color: @foreground;
+}
+
+#custom-clock-icon:hover {
+  color: @background;
+}
+
+#custom-mullvad {
+}
+
+#custom-notification {
+  margin-right: 6px;
+  color: @foreground;
+}
+
+#custom-notification:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+#custom-tray-icon {
+  margin: 0px 0px;
+}
+
+#tray {
+  padding: 0px 12px;
+  /* border-bottom: 2px solid @color8; */
+}
+
+#tray:hover {
+  /* background-color: transparent; */
+}
+
+@keyframes blink {
+  to {
+    color: @color1;
+  }
+}
+
+#battery {
+  color: @foreground;
+}
+
+#battery.warning:not(.charging) {
+  color: @foreground;
+}
+
+#battery.critical:not(.charging) {
+  color: @background;
+  animation: blink 1s linear infinite alternate;
+}
+
+#battery.charging {
+  color: @foreground;
+}
+
+#battery:hover {
+  color: @background;
+  background-color: @color3;
+}
+
+#custom-hostname {
+}
+
+#custom-hostname:hover {
+  color: @background;
+}
+
+#workspaces {
+  /* border-bottom: 2px solid transparent; */
+}
+
+/* #workspaces:hover { */
+/*   background-color: transparent; */
+/* } */
+
+#workspaces button {
+  /* border-bottom: 2px solid transparent; */
+  color: @foreground;
+  background-color: transparent;
+}
+
+#workspaces button:hover {
+  background-color: transparent;
+  color: @color2;
+}
+
+#workspaces button.active {
+  /* border-bottom: 2px solid @color4; */
+  color: @color4;
+}
+
+#workspaces button:hover {
+  color: @color4;
+}
+
+#workspaces button.empty {
+  color: @color8;
+}
+
+#window {
+  color: @foreground;
+}
+
+#window:hover {
+  color: @background;
+}

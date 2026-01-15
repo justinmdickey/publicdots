@@ -1,0 +1,110 @@
+
+@import                          "~/.cache/wal/rofi-dark.rasi"
+
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    drun-display-format:        "{name}";
+}
+
+* {
+    // font:   "Maple Mono NF 14";
+    font:   "Adwaita Sans SemiBold 14";
+
+    background-color:   transparent;
+    text-color:         @background;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color: @background;
+    // background-color: rgba(30, 30, 30, 0.3);
+    // background-color: rgba(234, 234, 236, 0.3);
+    border: 2px;
+    border-color: @color7;
+    padding: 12px;
+    location:       center;
+    width:          600;
+    border-radius:  12px;
+}
+
+inputbar {
+    font:   "Adwaita Sans SemiBold 18";
+    padding:    16px;
+    spacing:    16px;
+    background-color:   transparent;
+    color: @foreground;
+    children:   [icon-search, entry ];
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 4px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:   inherit;
+    placeholder         : "  Search";
+    placeholder-color   : rgba(255, 255, 255, 0.7);
+    color               : @foreground;
+}
+
+message {
+    border:             0px 0 0;
+    border-color:       @background-alt;
+    background-color:   @background-alt;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    lines:      6;
+    columns:    1;
+    padding:    15;
+    fixed-height:   false;
+    border:         0px 0 0;
+    border-color:   @background-alt;
+}
+
+element {
+    padding:            8px 16px;
+    margin:             4px 0px; 
+    spacing:            24px;
+    background-color:   transparent;
+    border:             2px;
+    border-color:       transparent;
+    border-radius:      12px;
+    color:              @foreground;
+}
+
+element normal active {
+    text-color: @selected;
+}
+
+element alternate active {
+    text-color: @selected;
+}
+
+element selected normal, element selected active {
+    background-color:   @color4;
+    border-color:       transparent;
+    text-color:         @background;
+}
+
+element-icon {
+    size:   2.2em;
+}
+
+element-text {
+    text-color: inherit;
+}

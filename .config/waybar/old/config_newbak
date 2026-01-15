@@ -1,0 +1,366 @@
+
+//  ░██╗░░░░░░░██╗░█████╗░██╗░░░██╗██████╗░░█████╗░██████╗░
+//  ░██║░░██╗░░██║██╔══██╗╚██╗░██╔╝██╔══██╗██╔══██╗██╔══██╗
+//  ░╚██╗████╗██╔╝███████║░╚████╔╝░██████╦╝███████║██████╔╝
+//  ░░████╔═████║░██╔══██║░░╚██╔╝░░██╔══██╗██╔══██║██╔══██╗
+//  ░░╚██╔╝░╚██╔╝░██║░░██║░░░██║░░░██████╦╝██║░░██║██║░░██║
+//  ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝
+
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 42,
+  "spacing": 3,
+  "output": "!HDMI-A-1",
+//  "mode": "dock",
+//  "margin-right": 10,
+//  "margin-left": 10,
+//  "margin-bottom": 6,
+  "modules-left": [ "group/power", "hyprland/workspaces", "hyprland/window"],
+  "modules-center": [ "custom/launcher", "clock"],
+  "modules-right": [ "tray", "pulseaudio", "custom/updates", "power-profiles-daemon", "custom/hyprsunset", "network", "battery", "bluetooth", "custom/notification"],
+
+//    "custom/notification": {
+//    "format": "{icon}",
+//    "format-icons": {
+//      "notification": "",
+//        "none": "",
+//        "dnd-notification": "",
+//        "dnd-none": "",
+//        "inhibited-notification": "",
+//        "inhibited-none": "",
+//        "dnd-inhibited-notification": "",
+//        "dnd-inhibited-none": ""
+//      },
+//      "return-type": "json",
+//      "exec-if": "which swaync-client",
+//      "exec": "swaync-client -swb",
+//      "on-click": "swaync-client -t -sw",
+//      "on-click-right": "swaync-client -d -sw",
+//      "escape": true
+//    },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    },
+  },
+
+  "custom/hyprsunset": {
+    "format": "",
+    "format-icons": {
+      "hyprsunset": "",
+      "hyprsunset-active": "",
+      "hyprsunset-inactive": "",
+    },
+    "tooltip-format": " Hyprsunset",
+    "on-click": "pkill hyprsunset || hyprsunset --temperature 3500",
+  },
+
+  "custom/notification": {
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#f7768e'></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='#f7768e'></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='#f7768e'></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='#f7768e'></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+
+  "custom/updates": {
+    "exec": "~/publicdots/scripts/updates.sh",
+    "interval": 3600,
+    "format": "{}",
+    "on-click": "hyprctl dispatch exec 'kitty -e fish -c yay'"
+  },
+
+  "backlight/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+    "device": ""
+  },
+
+  "group/power": {
+     "orientation": "inherit",
+     "drawer": {
+       "transition-duration": 500,
+       "click-to-reveal": true,
+       "children-class": "sub-power",
+       "transition-left-to-right": true  },
+     "modules": [
+       "custom/powermenu",
+       "custom/lock",
+       "custom/reboot",
+       "custom/shutdown",
+       "custom/exit"
+     ]
+   },
+
+  "custom/powermenu": {
+     "format": "",
+     "tooltip-format": "Power Menu",
+     //"on-click": "~/.config/rofi/scripts/powermenu_t4"
+  },
+
+  "custom/lock": {
+    "format": "",
+    "tooltip-format": "Lock Screen",
+    "on-click": "hyprlock"
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "tooltip-format": "Reboot",
+    "on-click": "reboot"
+   },
+
+  "custom/shutdown": {
+    "format": "",
+    "tooltip-format": "Shutdown",
+    "on-click": "shutdown"
+  },
+
+  "custom/exit": {
+    "format": "",
+    "tooltip-format": "Exit",
+    "on-click": "loginctl terminate-user $USER"
+  },
+   
+  "group/music": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "sub-music",
+       "children-class": "sub-power",
+      "transition-left-to-right": true  
+    },
+      "modules": [
+        "pulseaudio",
+        "pulseaudio/slider",
+      ]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": " {volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "0% {icon} ",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+ 
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+
+  "custom/song_progress": {
+      "exec": "~/.config/waybar/modules/song_progress.sh",
+      "interval": 1,
+      "format": "{}",
+  },
+
+  "group/spotify": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "sub-music",
+       "children-class": "sub-power",
+      "transition-left-to-right": true  
+    },
+      "modules": [
+        "custom/spotify-icon",
+        "custom/nowplaying",
+      ]
+  },
+ 
+  "custom/spotify-icon": {
+    "format": "",
+  },
+  
+  "custom/spotify": {
+    //"exec": "/usr/bin/python3 $HOME/.config/waybar/modules/mediaplayer.py",
+    "exex": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+    "format": "",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "spacing": 0,
+    "margin": 0,
+    "max-length": 45
+  },
+
+  "custom/nowplaying": {
+    "exec": "/usr/bin/python3 $HOME/.config/waybar/modules/mediaplayer.py",
+    //"exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "spacing": 0,
+    "margin": 0,
+    "max-length": 45
+   },
+
+  "group/windows": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "sub-workspace",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/window-icon",
+      "hyprland/window",
+    ]
+  },
+
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "sub-tray",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/tray-icon",
+      "tray",
+    ]
+  },
+
+  "custom/tray-icon": {
+    "format": "",
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 20,
+    "show-passive-items:": true
+  },
+
+  "custom/window-icon": {
+    "format": "",
+  },
+
+  "hyprland/window": {
+    "format": " {title} ",
+    "max-length": 35,
+    "separate-outputs": true,
+  },
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "persistent-workspaces": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
+    "format-icons": {
+     "1": "",
+     "2": "",
+     "3": "",
+     "4": "",
+     "5": "",
+      // "1": "browser",
+      // "2": "slack",
+      // "3": "spotify",
+      // "4": "neovim",
+      // "5": "prusa",
+    },
+  },
+
+  "custom/launcher": {
+    "format": "",
+    // "on-click": "rofi -show drun -icon-theme 'kora' -theme $HOME/.config/rofi/launchers/spotlight/spotlight.rasi",
+    "on-click": "exec sherlock",
+  },
+
+  "custom/hostname": {
+      "exec": "$HOME/publicdots/scripts/whoami.sh",
+      "format": "{}",
+      "on-click": "hyprctl dispatch exec [float] 'kitty'"
+   },
+
+  "custom/fzf": {
+    "format": "",
+    "on-click": "hyprctl dispatch exec [float] 'kitty --class kitty-fzf -e fish -c ff'"
+  },
+
+  "network": {
+		"format-wifi": "",
+		"format-ethernet": "",
+		"format-linked": "",
+		"format-disconnected": "⚠",
+		"format-alt": " {essid}:{ipaddr}/{cidr}",
+	  "interval": 0.5,
+	},
+
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": "",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "on-click": "blueman-manager",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+
+  "custom/clock-icon": {
+    "format": "",
+  },
+
+  "clock": {
+    "interval": 1,
+    "timezone": "America/Indianapolis",
+    "format": " {:%I:%M %p}",
+    "format-alt": " {:%a %b %d  %I:%M %p}",
+    //"on-click": "hyprctl dispatch exec [float] 'gnome-calendar'",
+    "tooltip": true,
+    "tooltip-format": "{:%a %b %d %I:%M%p}"
+  },
+
+  "battery": {
+	  "interval": 5,
+    "states": {
+		//"good": 95,
+		"warning": 30,
+		"critical": 15
+	},
+	  "format": "{icon} {capacity}%",
+    "format-alt": "{icon} {capacity}%",
+	  "format-charging": " {capacity}%",
+	  "format-plugged":  " {capacity}%",
+	  // "format-good": "", // An empty format will hide the module
+	  // "format-full": "",
+	  "format-icons": ["", "", "", "", ""]
+  },
+}

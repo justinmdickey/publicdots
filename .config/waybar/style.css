@@ -1,152 +1,413 @@
+/* Import pywal colors */
 @import url("/home/justin/.cache/wal/colors-waybar.css");
 
+@define-color background_alt rgba(34, 34, 37, 0.8);
+@define-color background_alt_light rgba(234, 234, 236, 0.8);
+/* @define-color background_alt rgba(220, 220, 225, 0.7); */
+@define-color border_alt rgba(190, 190, 210, 0.5);
+
+/* Base styles */
 * {
-  border: none;
-  font-family: 'Jetbrains Mono', 'Font Awesome 6 Brands', 'Font Awesome 6 Free Solid';
-  font-size: 16px;
   font-weight: 600;
 }
 
-#waybar {
-  background-color: @background;
-  color: @background;
-  font-weight: 800;
+window#waybar {
+  background: transparent;
+  font-weight: 600;
+  /* border-bottom: 2px solid @color7; */
+  /* margin: 12px; */
+  /* border-top: 12px solid @background_alt; */
 }
 
+/* Module base styling */
 .module {
-  padding: 4px;
-  margin: 3px;
-  color: @color15;
+  background-color: transparent;
+  color: @foreground;
+  border: 2px solid transparent;
+  font-family: "Adwaita Sans", "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  /* font-family: "Maple Mono NF"; */
+  min-width: 8px;
+  font-size: 20px;
+  border-radius: 42px;
+  margin: 2px 2px 6px 2px;
+  padding: 0px;
+}
+
+.modules-left {
+  padding-right: 12px;
+  background-color: @background;
+  border-radius: 0px 0px 42px 0px;
+}
+
+.modules-center {
+  padding: 0px 12px;
+  background-color: @background;
+  border-radius: 0px 0px 42px 42px;
+}
+
+.modules-right {
+  padding-left: 12px;
+  background-color: @background;
+  border-radius: 0px 0px 0px 42px;
 }
 
 .module:hover {
+  /* background-color: @background_alt; */
+  color: @background;
 }
 
 label.module {
-  border-radius: 10px;
-  margin: 3px;
-  padding: 2px 4px;
-  min-width: 30px;
+  padding: 10px 8px;
+  min-width: 20px;
 }
 
-#window {
-  background-color: @color3;
-  color: @background;
-  padding: 4px;
-  margin: 3px;
-  border-radius: 10px;
-  font-size: 14px;
-  min-width: 40px;
+/* Group styles */
+.group-utils {
+  color: @foreground;
 }
 
-window#waybar.empty #window {
+.group-power {
 }
 
-#temperature {
+.sub-power {
+  border-radius: 50px;
 }
 
-#temperature.critical {
-}
-
-#custom-gputemp {
-}
-
-#custom-gputemp.critical {
-}
-
-#image {
-  margin: 3px;
-  border-radius: 10px;
-}
-
-#network {
-  background-color: @color1;
+.sub-power:hover {
+  background-color: @color8;
   color: @background;
 }
 
-#custom-mullvad {
+/* Power profiles daemon */
+#power-profiles-daemon {
+  color: @foreground;
+}
+
+#power-profiles-daemon:hover {
+  background-color: @color8;
+  color: @background;
+}
+
+#power-profiles-daemon.performance {
+  color: @foreground;
+}
+
+#power-profiles-daemon.performance:hover {
   background-color: @color4;
+  border-color: @color4;
   color: @background;
 }
 
-#pulseaudio {
+#power-profiles-daemon.balanced {
+  color: @foreground;
+}
+
+#power-profiles-daemon.balanced:hover {
   background-color: @color5;
+  border-color: @color5;
   color: @background;
 }
 
-#clock {
+#power-profiles-daemon.power-saver {
+  color: @foreground;
+}
+
+#power-profiles-daemon.power-saver:hover {
   background-color: @color2;
-  color: @background;
-  margin-right: 15px;
-}
-
-#custom-notification {
-  background-color: @color3;
+  border-color: @color2;
   color: @background;
 }
 
-#tray {
-  padding: 4px 10px;
-  margin: 3px;
-  border-radius: 10px;
-  font-size: 14px;
+/* Power menu controls */
+#custom-powermenu {
+  color: @color1;
 }
 
-#battery {
-  background-color: @color6;
-  color: @background;
-}
-
-#battery#bat1 {
-  background-color: @color6;
-  color: @background;
-}
-
-#battery.charging {
-}
-
-#battery#bat1.charging {
-}
-
-#battery.critical {
-}
-
-#battery#bat1.critical {
-}
-
-#battery.warning {
-}
-
-#battery#bat1.warning {
-}
-
-#custom-hostname {
+#custom-powermenu:hover {
   background-color: @color1;
+  border-color: @color1;
   color: @background;
+}
+
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-shutdown:hover,
+#custom-exit:hover {
+  color: @background;
+  background-color: @color1;
+}
+
+/* Audio controls */
+#pulseaudio {
+  color: @foreground;
+}
+
+#pulseaudio:hover {
+  color: @background;
+  background-color: @color2;
+  border-color: @color2;
+}
+
+#pulseaudio-slider {
+  background-color: transparent;
+  padding: 0px 10px;
+}
+
+#pulseaudio-slider slider {
+  background-color: @foreground;
+}
+
+#pulseaudio-slider trough {
+  min-height: 6px;
+  min-width: 150px;
+  background-color: @color8;
+}
+
+#pulseaudio-slider trough:hover {
+  background-color: @color8;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background-color: @color2;
+}
+
+/* Backlight slider */
+#backlight-slider {
+  min-width: 150px;
+}
+
+#backlight-slider slider {
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#backlight-slider trough {
+  border-radius: 5px;
+}
+
+#backlight-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+}
+
+#custom-privacy-dots {
+  padding: 0 10px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* Media/Spotify controls */
+#custom-song_progress {
+  font-family: "Maple Mono";
+}
+
+#custom-spotify:hover {
+  background-color: @color4;
+}
+
+#custom-spotify-icon {
+  color: @color2;
 }
 
 #custom-spotify {
+  color: @color2;
+}
+
+#custom-nowplaying {
+}
+
+#custom-nowplaying:hover {
+  color: @background;
   background-color: @color2;
+}
+
+/* Individual modules */
+#battery {
+  /* color: @color3; */
+}
+
+#battery.warning:not(.charging) {
+  color: @color3;
+}
+
+#battery.critical:not(.charging) {
+  color: @background;
+  animation: blink 1s linear infinite alternate;
+}
+
+#battery.charging {
+  color: @color2;
+}
+
+#battery.plugged {
+  color: @color2;
+}
+
+#battery:hover {
+  color: @background;
+  background-color: @color3;
+  border-color: @color3;
+}
+
+#bluetooth.connected {
+  color: @color4;
+}
+
+#bluetooth:hover {
+  color: @background;
+  background-color: @color4;
+  border-color: @color4;
+}
+
+#clock {
+  color: @foreground;
+}
+
+#clock:hover {
+  color: @background;
+  background-color: @color2;
+  border-color: @color2;
+}
+
+#custom-clock-icon {
+  color: @foreground;
+}
+
+#custom-clock-icon:hover {
   color: @background;
 }
 
-#workspaces {
-  background-color: @color2;
+#custom-fzf {
+  color: @color4;
+}
+
+#custom-fzf:hover {
   color: @background;
-  border-radius: 10px;
-  margin: 3px;
-  padding: 4px;
+  background-color: @color4;
+}
+
+#custom-hyprsunset {
+  color: @foreground;
+}
+
+#custom-hyprsunset:hover {
+  color: @background;
+  background-color: @color1;
+  border-color: @color1;
+}
+
+#custom-launcher {
+}
+
+#custom-launcher:hover {
+  color: @background;
+  background-color: @color4;
+  border-color: @color4;
+}
+
+#custom-notification {
+  /* color: @color1; */
+}
+
+#custom-notification:hover {
+  color: @background;
+  background-color: @color1;
+  border-color: @color1;
+}
+
+#custom-settings {
+  /* color: @color4; */
+}
+
+#custom-settings:hover {
+  color: @background;
+  background-color: @color4;
+  border-color: @color4;
+}
+
+#custom-tray-icon {
+  margin: 0px 0px;
+}
+
+#custom-updates {
+  color: @color3;
+}
+
+#custom-updates:hover {
+  color: @background;
+  background-color: @color3;
+  border-color: @color3;
+}
+
+#network {
+  padding: 0px 10px 0px 6px;
+  /* color: @color5; */
+}
+
+#network:hover {
+  color: @background;
+  background-color: @color5;
+  border-color: @color5;
+}
+
+#tray {
+  padding: 0px 12px;
+  /* background-color: @color7; */
+}
+
+#window {
+  min-width: 40px;
+  color: @foreground;
+}
+
+#window:hover {
+  background-color: @background_alt;
+}
+
+/* Workspaces */
+
+#workspaces {
+  color: @foreground;
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  font-size: 16px;
+  letter-spacing: -14px;
+  padding: 0px 6px;
+}
+
+#workspaces:hover {
 }
 
 #workspaces button {
-  color: @background;
+  color: @color8;
+  border-radius: 50px;
+  margin: 0px -4px;
+  /* margin-right: 4px; */
+}
+
+#workspaces button.empty {
+  color: @color7;
 }
 
 #workspaces button.active {
-  background-color: @background;
-  color: @foreground;
-  border-radius: 10px;
+  /* background-color: @color2; */
+  /* color: @color4; */
+  color: @color4;
+  /* border-radius: 50px; */
+  /* border-bottom: 2px solid @color2; */
 }
 
 #workspaces button:hover {
+  color: @color4;
+  background-color: transparent;
+}
+
+/* Animations */
+@keyframes blink {
+  to {
+    color: @color1;
+  }
 }

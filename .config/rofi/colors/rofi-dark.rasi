@@ -1,0 +1,9 @@
+//Rofi Themes Template
+* {
+  background: #111111;
+  background-alt: #1d1f21;
+  foreground: #c5c8c6;
+  selected: #b5bd68;
+  active: #81a2be;
+  urgent: #cc6666;
+}
