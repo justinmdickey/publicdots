@@ -22,7 +22,7 @@ fi
 
 # Sync .config directories
 echo "Syncing .config directories..."
-CONFIGS=("ghostty" "hypr" "nvim" "rofi" "swaync" "tmux" "wal" "waybar")
+CONFIGS=("fish" "ghostty" "hypr" "nvim" "rofi" "swaync" "tmux" "wal" "waybar")
 
 for config in "${CONFIGS[@]}"; do
     echo "  - Syncing $config..."

@@ -20,6 +20,7 @@ This repository contains my Wayland/Hyprland desktop configuration including:
 ## Included Configurations
 
 ### Config Directories (.config/)
+- `fish/` - Fish shell configuration
 - `ghostty/` - Terminal emulator configuration
 - `hypr/` - Hyprland compositor settings, keybinds, startup apps
 - `nvim/` - Neovim with lazy.nvim plugin manager
@@ -92,13 +93,14 @@ find . -type f -exec sed -i 's|~/publicdots/scripts/|~/your-location/scripts/|g'
 # Install all dependencies (Arch Linux)
 yay -S hyprland hyprlock hypridle hyprpaper \
        waybar rofi-wayland swaync \
-       ghostty neovim tmux \
+       ghostty neovim tmux fish \
        python-pywal \
        grim slurp \
        pamixer wireplumber \
        brightnessctl playerctl \
        swww sassc \
-       stow
+       stow \
+       ttf-maple ttf-jetbrains-mono-nerd ttf-font-awesome
 ```
 
 **Core:**
@@ -110,6 +112,7 @@ yay -S hyprland hyprlock hypridle hyprpaper \
 - `ghostty` - terminal (AUR)
 - `neovim` - editor
 - `tmux` - terminal multiplexer
+- `fish` - shell
 - `python-pywal` - color scheme generator
 
 **Utilities (used by scripts):**
@@ -119,6 +122,11 @@ yay -S hyprland hyprlock hypridle hyprpaper \
 - `playerctl` - media controls
 - `swww` - wallpaper daemon (AUR)
 - `sassc` - SCSS compilation for swaync
+
+**Fonts:**
+- `ttf-maple` - Maple Mono NF (AUR) - primary monospace font
+- `ttf-jetbrains-mono-nerd` - JetBrains Mono Nerd Font - alternative mono
+- `ttf-font-awesome` - Font Awesome 6 icons
 
 ## Customization
 
@@ -152,6 +160,7 @@ wal -i /path/to/wallpaper.jpg
 ```
 publicdots/
 ├── .config/              # Application configurations (stowed to ~/.config/)
+│   ├── fish/
 │   ├── ghostty/
 │   ├── hypr/
 │   ├── nvim/
