@@ -88,24 +88,37 @@ find . -type f -exec sed -i 's|~/publicdots/scripts/|~/your-location/scripts/|g'
 
 ### Dependencies
 
-Core requirements:
-- Hyprland (compositor)
-- Waybar (status bar)
-- Rofi (launcher)
-- SwayNC (notifications)
-- Ghostty (terminal)
-- Neovim (editor)
-- Tmux (multiplexer)
-- Pywal (theming - optional)
+```bash
+# Install all dependencies (Arch Linux)
+yay -S hyprland hyprlock hypridle hyprpaper \
+       waybar rofi-wayland swaync \
+       ghostty neovim tmux \
+       python-pywal \
+       grim slurp \
+       pamixer wireplumber \
+       brightnessctl playerctl \
+       swww sassc \
+       stow
+```
 
-Additional utilities referenced by scripts:
-- grim, slurp (screenshots)
-- pamixer, wireplumber (audio)
-- brightnessctl (backlight)
-- playerctl (media controls)
-- swww (wallpaper)
-- sassc (SCSS compilation for swaync)
-- Various other system utilities
+**Core:**
+- `hyprland` - compositor
+- `hyprlock`, `hypridle`, `hyprpaper` - lock screen, idle daemon, wallpaper
+- `waybar` - status bar
+- `rofi-wayland` - application launcher
+- `swaync` - notification daemon
+- `ghostty` - terminal (AUR)
+- `neovim` - editor
+- `tmux` - terminal multiplexer
+- `python-pywal` - color scheme generator
+
+**Utilities (used by scripts):**
+- `grim`, `slurp` - screenshots
+- `pamixer`, `wireplumber` - audio control
+- `brightnessctl` - backlight control
+- `playerctl` - media controls
+- `swww` - wallpaper daemon (AUR)
+- `sassc` - SCSS compilation for swaync
 
 ## Customization
 
